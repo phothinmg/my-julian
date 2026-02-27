@@ -17,6 +17,9 @@ const julian = require("@phothinmaung/julian");
 
 const jd = julian.gregorianToJulian(2025, 2, 22);
 console.log(jd);
+
+const [year, month, day] = julian.julianToGregorian(jd);
+console.log(year, month, day);
 ```
 
 ## API
@@ -32,6 +35,13 @@ console.log(jd);
 - `tz`: timezone offset from UTC in hours, default `0`
 
 Returns: `number` (Julian Date)
+
+### `julianToGregorian(julianDate, tz?)`
+
+- `julianDate`: number
+- `tz`: timezone offset from UTC in hours, default `0`
+
+Returns: `[year, month, day]` as a tuple of numbers
 
 ## Build requirements (from source)
 

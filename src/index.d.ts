@@ -11,4 +11,9 @@ declare namespace MyJulian {
     seconds?: number,
     tz?: number,
   ): number;
+
+  function julianToGregorian(
+    julianDate: number,
+    tz?: number,
+  ): [year: number, month: number, day: number];
 }

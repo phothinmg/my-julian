@@ -1,15 +1,15 @@
 let myJulian;
 
 try {
-  myJulian = require("../dist/myJulian.node");
-} catch (distError) {
+  myJulian = require("../build/Release/myJulian.node");
+} catch (buildError) {
   try {
-    myJulian = require("../build/Release/myJulian.node");
-  } catch (buildError) {
+    myJulian = require("../dist/myJulian.node");
+  } catch (distError) {
     const error = new Error(
-      "Failed to load native addon. Tried dist/myJulian.node and build/Release/myJulian.node."
+      "Failed to load native addon. Tried build/Release/myJulian.node and dist/myJulian.node."
     );
-    error.cause = { distError, buildError };
+    error.cause = { buildError, distError };
     throw error;
   }
 }
