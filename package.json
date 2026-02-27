@@ -1,5 +1,5 @@
 {
-  "name": "my-julian",
+  "name": "@phothinmaung/julian",
   "version": "0.0.1",
   "description": "NodeJs c++ addon for Julian Date",
   "main": "dist/index.js",
