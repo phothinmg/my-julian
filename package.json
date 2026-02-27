@@ -5,9 +5,10 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "prepublish": "cp build/Release/myJulian.node ./dist/myJulian.node",
-    "build": "node-gyp configure build && npm install --unsafe-perm",
-    "rebuild": "node-gyp rebuild"
+    "install": "node scripts/install-native.js",
+    "build": "node-gyp rebuild",
+    "sync:dist": "node scripts/prepare-dist.js",
+    "prepack": "npm run build && npm run sync:dist"
   },
   "keywords": [
     "c++ addon",
@@ -28,6 +29,9 @@
     "package.json",
     "README.md",
     "LICENSE",
+    "binding.gyp",
+    "scripts/**/*",
+    "src/**/*",
     "dist/**/*"
   ],
   "repository": {
