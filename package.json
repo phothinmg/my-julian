@@ -1,19 +1,40 @@
 {
   "name": "my-julian",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "NodeJs c++ addon for Julian Date",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "prepublish": "cp build/Release/myJulian.node ./dist/myJulian.node",
     "build": "node-gyp configure build && npm install --unsafe-perm",
     "rebuild": "node-gyp rebuild"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "c++ addon",
+    "Julian Date"
+  ],
+  "author": {
+    "name": "Pho Thin Mg",
+    "email": "phothinmg@disroot.org",
+    "url": "https://phothinmg.github.io/"
+  },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^25.3.2",
     "node-gyp": "^12.2.0",
     "typescript": "^5.9.3"
+  },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "dist/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phothinmg/my-julian.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
